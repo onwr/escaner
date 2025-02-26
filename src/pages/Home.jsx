@@ -1,9 +1,11 @@
-import Hero from '@components/home/Hero';
-import React from 'react';
+import Header from "@/components/Header";
+import React from "react";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-[#006bde]/5 p-5'>
+    <div>
+      <Header />
       <Hero />
     </div>
   );
