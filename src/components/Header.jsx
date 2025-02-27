@@ -45,18 +45,18 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-white py-4 px-6 shadow">
+    <header className="bg-white py-2 px-6 border-b border-b-black/20 sticky top-0 z-50 ">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex-shrink-0">
-          <img src="/images/logo.png" className="w-36 md:w-52" alt="logo" />
+          <img src="/images/logo.png" className="w-36 md:w-44 lg:w-72" alt="logo" />
         </div>
 
-        <nav className="hidden md:flex items-center justify-center gap-5">
+        <nav className="hidden lg:flex items-center justify-center gap-16">
           {navLinks.map((link, index) => (
             <motion.a
               key={index}
               href={link.href}
-              className="flex text-lg font-medium items-center gap-1 hover:text-gray-500 transition-colors"
+              className="flex text-xl font-medium items-center gap-1 hover:text-gray-500 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -65,16 +65,16 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden md:flex justify-end items-center gap-2">
+        <div className="hidden lg:flex justify-end items-center gap-2">
           <motion.button
-            className="flex items-center font-medium justify-center gap-2 bg-[#009fe3]/90 text-white py-2 px-3 text-sm hover:rounded-xl cursor-pointer duration-300"
+            className="flex items-center font-medium justify-center gap-2 bg-[#009fe3]/90 text-white py-2 px-3 text-base hover:rounded-xl cursor-pointer duration-300"
             whileHover={{ scale: 1.05, borderRadius: "0.75rem" }}
             whileTap={{ scale: 0.95 }}
           >
             E-Katalog <BiDownload />
           </motion.button>
           <motion.button
-            className="flex font-medium justify-center items-center gap-2 bg-[#009fe3]/90 text-white py-2 px-3 text-sm hover:rounded-xl cursor-pointer duration-300"
+            className="flex font-medium justify-center items-center gap-2 bg-[#009fe3]/90 text-white py-2 px-3 text-base hover:rounded-xl cursor-pointer duration-300"
             whileHover={{ scale: 1.05, borderRadius: "0.75rem" }}
             whileTap={{ scale: 0.95 }}
           >
@@ -90,7 +90,7 @@ const Header = () => {
           </select>
         </div>
 
-        <div className="md:hidden flex items-center gap-4">
+        <div className="lg:hidden flex items-center gap-4">
           <select
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
@@ -116,7 +116,7 @@ const Header = () => {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className="md:hidden z-50 absolute top-16 left-0 right-0 bg-white shadow-lg py-4 px-6"
+            className="lg:hidden z-50 absolute top-16 left-0 right-0 bg-white shadow-lg py-4 px-6"
           >
             <motion.nav className="flex flex-col gap-4">
               {navLinks.map((link, index) => (
